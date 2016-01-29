@@ -19,7 +19,7 @@ import piazza.services.ingest.repository.MetadataRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration("/elasticsearch-test-connection.xml")
-public class DemoApplicationTests {
+public class IngestServiceApplicationTests {
 
 	@Autowired
 	MetadataRepository repository;
@@ -40,6 +40,7 @@ public class DemoApplicationTests {
 		text.add(new TextKeyValue("comment", "testing 1.. 2.. 3.."));
 		data.setTextKeyValue(text);
 		repository.save(data);
+		System.out.println("Hello World"+"/n"+repository.toString());
 	}
 
 }

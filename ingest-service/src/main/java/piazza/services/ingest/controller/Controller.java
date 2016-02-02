@@ -17,8 +17,9 @@ public class Controller {
 	MetadataRepository repository;
 
 	@RequestMapping(value="/metadata_v1/ingest", method=RequestMethod.POST, consumes="application/json")
-	public @ResponseBody void createEntry(@RequestBody Metadata entry){
+	public @ResponseBody Metadata createEntry(@RequestBody Metadata entry){
 		repository.save(entry);
+		return entry;
 	}
 	
 	

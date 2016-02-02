@@ -8,7 +8,6 @@ import java.util.UUID;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
@@ -23,10 +22,9 @@ public class IngestServiceApplicationTests {
 
 	@Autowired
 	MetadataRepository repository;
-	
+
 	@Test
-	public void loadData()
-	{
+	public void loadData() {
 		Metadata data = new Metadata();
 		data.setUuid(UUID.randomUUID().toString());
 		data.setUserId("rshultz");
@@ -40,7 +38,7 @@ public class IngestServiceApplicationTests {
 		text.add(new TextKeyValue("comment", "testing 1.. 2.. 3.."));
 		data.setTextKeyValue(text);
 		repository.save(data);
-		System.out.println("Hello World"+"/n"+repository.toString());
+		System.out.println("Hello World" + "/n" + repository.toString());
 	}
 
 }

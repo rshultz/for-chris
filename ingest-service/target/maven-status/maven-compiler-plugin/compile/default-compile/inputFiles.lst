@@ -1,0 +1,7 @@
+/home/rshultz/workspace/ingest-service/src/main/java/piazza/services/ingest/model/NumericKeyValue.java
+/home/rshultz/workspace/ingest-service/src/main/java/piazza/services/ingest/ElasticsearchConfiguration.java
+/home/rshultz/workspace/ingest-service/src/main/java/piazza/services/ingest/model/Metadata.java
+/home/rshultz/workspace/ingest-service/src/main/java/piazza/services/ingest/IngestServiceApplication.java
+/home/rshultz/workspace/ingest-service/src/main/java/piazza/services/ingest/model/TextKeyValue.java
+/home/rshultz/workspace/ingest-service/src/main/java/piazza/services/ingest/repository/MetadataRepository.java
+/home/rshultz/workspace/ingest-service/src/main/java/piazza/services/ingest/controller/Controller.java

@@ -10,23 +10,23 @@ import com.fasterxml.jackson.databind.DeserializationContext;
 import com.fasterxml.jackson.databind.JsonDeserializer;
 import com.fasterxml.jackson.databind.JsonNode;
 
-public class NumericKeyValueJsonDeserializer extends JsonDeserializer<List<NumericKeyValue>> {
+public class TextKeyValueJsonDeserializer extends JsonDeserializer<List<TextKeyValue>> {
 
 	@Override
-	public List<NumericKeyValue> deserialize(JsonParser jp, DeserializationContext ctxt)
+	public List<TextKeyValue> deserialize(JsonParser jp, DeserializationContext ctxt)
 			throws IOException, JsonProcessingException {
-		List<NumericKeyValue> numberKeyValues = new ArrayList<NumericKeyValue>();
+		List<TextKeyValue> textKeyValues = new ArrayList<TextKeyValue>();
 
 		JsonNode root = jp.getCodec().readTree(jp);
 
 		for (int i = 0; i != root.size(); ++i) {
 
-			NumericKeyValue keyValue = new NumericKeyValue(root.get(i).get("key").asText(),
-					Double.parseDouble(root.get(i).get("value").asText()));
+			TextKeyValue keyValue = new TextKeyValue(root.get(i).get("key").asText(),
+					root.get(i).get("value").asText());
 
-			numberKeyValues.add(keyValue);
+			textKeyValues.add(keyValue);
 		}
-		return numberKeyValues;
+		return textKeyValues;
 	}
 
 }

@@ -27,6 +27,7 @@ public class Metadata {
 	@JsonDeserialize(using = NumericKeyValueJsonDeserializer.class)
 	private List<NumericKeyValue> numericKeyValue;
 	@Field(type = FieldType.Nested)
+	@JsonDeserialize(using = TextKeyValueJsonDeserializer.class)
 	private List<TextKeyValue> textKeyValue;
 	
 	public String getId() {

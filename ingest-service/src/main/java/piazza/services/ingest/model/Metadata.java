@@ -9,6 +9,8 @@ import org.springframework.data.elasticsearch.annotations.Document;
 import org.springframework.data.elasticsearch.annotations.Field;
 import org.springframework.data.elasticsearch.annotations.FieldType;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 @Document(indexName = "metadata_v1", type = "metadata")
 public class Metadata {
 	@Id
@@ -22,6 +24,7 @@ public class Metadata {
 	@Field(type = FieldType.String)
 	private String classification;
 	@Field(type = FieldType.Nested)
+	@JsonDeserialize(using = NumericKeyValueJsonDeserializer.class)
 	private List<NumericKeyValue> numericKeyValue;
 	@Field(type = FieldType.Nested)
 	private List<TextKeyValue> textKeyValue;

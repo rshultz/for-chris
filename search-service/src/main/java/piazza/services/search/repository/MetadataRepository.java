@@ -1,5 +1,6 @@
 package piazza.services.search.repository;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.elasticsearch.repository.ElasticsearchRepository;
@@ -9,6 +10,10 @@ import piazza.services.search.model.Metadata;
 public interface MetadataRepository extends ElasticsearchRepository<Metadata, String> {
 
 	List<Metadata> findByUserId(String userId);
+	
+	List<Metadata> findByDateBetween(Date startDate, Date stopDate);
+	
+	List<Metadata> findByUserIdAndDateAndClassification(String userId, Date date, String classification);
 	
 //	Documentation for reference:
 //	

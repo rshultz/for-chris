@@ -1,4 +1,4 @@
-package piazza.services.ingest.model;
+package piazza.services.search.model;
 
 import java.util.Date;
 import java.util.List;
@@ -19,7 +19,7 @@ public class Metadata {
 	private String uuid;
 	@Field(type = FieldType.String)
 	private String userId;
-	@Field(type = FieldType.Date, format = DateFormat.basic_date_time)
+	@Field(type = FieldType.Date, format = DateFormat.date_hour_minute_second_millis)
 	private Date date = null;
 	@Field(type = FieldType.String)
 	private String classification;
